@@ -57,6 +57,62 @@ const getSellers = async(req,res) => {
     }
 
 }
+
+// updateSeller
+// const updateSellerSparse = async(req,res) = {
+
+//     const resp = await prisma.seller.update({
+//         where:{
+//             id
+//         },
+//         data:{
+//             name:"kiran"
+
+//         }
+//     })
+
+// }
+//updateSellerSparse
+const updateSellerSparse = async(req,res)  =>{
+    const id = parseInt(req.params.sellerId);
+    const {name,email,gstNumber,phoneNumber} = req.body
+    try{
+        const resp = await prisma.seller.update({
+            where: {
+              id
+            },
+            data: {
+                name,email,gstNumber,phoneNumber
+            },
+          })
+          res.status(201).json({msg:"succes",data:resp})
+    }
+    catch(err){
+        console.log(err);
+        res.status(400).json({msg:"bad request"})
+    }
+}
+
+
+//delete seller
+const deleteSeller = async(req,res) => {
+    console.log("delete function running");
+    const id = parseInt(req.params.sellerId)
+    console.log(id)
+    try{
+        const deleteSeller = await prisma.seller.delete({
+            where:{
+                id
+            }
+        })
+        res.status(201).json({msg:"successfully deleted"})
+    }
+    catch(err){
+        console.log(err);
+        res.status(400).json({msg:"bad request", err})
+    }
+}
+
 module.exports = {
-    getSellers,createSeller
+    getSellers,createSeller,updateSellerSparse,deleteSeller
 }
