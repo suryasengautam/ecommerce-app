@@ -3,13 +3,14 @@ const {getSellers, createSeller,updateSellerSparse,deleteSeller} = require("./co
 const app = express()
 const {createProduct,getProducts} = require("./controller/product.controller")
 const {login,signup} = require("./controller/user.controller")
+const {authenticate} = require("./middleware/auth")
 const port = 6921
 app.use(express.static("public"))
 const {DeleteSellerCheck} = require('./middleware/seller.middleware');
 const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({extended:false}))//express.urlencoded({extended:false/true})
 app.use(bodyParser.json())//express.json()
-app.post("/seller",createSeller)
+app.post("/seller",authenticate,createSeller)
 app.get("/seller",getSellers)
 app.post("/seller/:sellerId/product",createProduct)
 app.get("/products",getProducts)

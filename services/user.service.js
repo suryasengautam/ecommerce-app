@@ -2,10 +2,10 @@ const { PrismaClient } = require("@prisma/client");
 const md5 = require("md5");
 const prisma = new PrismaClient();
 const jwt = require("jsonwebtoken")
-const secret = "secret"
+const {authSecret}=  require("../config")
 
 const generateToken = async(name,email,role) => {
-    const token = await jwt.sign({name,email,role},secret, { expiresIn: '1h' })
+    const token = await jwt.sign({name,email,role},authSecret, { expiresIn: "551h" })
     console.log(token);
     return token
 }   
