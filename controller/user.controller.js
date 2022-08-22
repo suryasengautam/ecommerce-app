@@ -2,6 +2,8 @@ const {createUser,validateUsernamePassword} = require("../services/user.service"
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const md5 = require('md5');
+const {logger} = require("../logger")
+// const { logger } = require("../logger");
 const login = async(req,res) => {
     const{email,password} = req.body
     if (!(email&&password)){
@@ -9,20 +11,18 @@ const login = async(req,res) => {
     }
     try{
         const {resp,token} = await validateUsernamePassword(email,password)
+        logger.info(resp)
+        logger.error("surya")
         if (resp){
             res.status(200).json({msg:"login successfull",token})
         }
         else{
             res.status(401).json({msg:"access denied "})
         }
-
-
     }
     catch(err){
         console.log(err);
         res.status(500).json({msg:"something failed "})
-
-
     }
     const resp = validateUsernamePassword(email,password)
 

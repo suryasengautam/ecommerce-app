@@ -1,0 +1,60 @@
+{
+  message: undefined,
+  level: 'info',
+  timestamp: '2022-08-22T10:23:19.169Z'
+}
+{
+  message: undefined,
+  level: 'info',
+  timestamp: '2022-08-22T10:25:03.026Z'
+}
+{
+  message: {
+    id: 4,
+    name: 'bipin',
+    email: 'bipin@gmail.com',
+    password: '52f8688e0f9a8b19a0352f5748bdad80',
+    phoneNumber: '9988787878',
+    createdAt: 2022-08-20T16:29:48.836Z,
+    updatedAt: 2022-08-20T16:29:48.837Z,
+    role: 'USER',
+    dob: null
+  },
+  level: 'info',
+  timestamp: '2022-08-22T10:30:35.249Z'
+}
+{
+  message: {
+    id: 4,
+    name: 'bipin',
+    email: 'bipin@gmail.com',
+    password: '52f8688e0f9a8b19a0352f5748bdad80',
+    phoneNumber: '9988787878',
+    createdAt: 2022-08-20T16:29:48.836Z,
+    updatedAt: 2022-08-20T16:29:48.837Z,
+    role: 'USER',
+    dob: null
+  },
+  level: 'info',
+  timestamp: '2022-08-22T10:30:52.515Z'
+}
+{
+  message: {
+    id: 4,
+    name: 'bipin',
+    email: 'bipin@gmail.com',
+    password: '52f8688e0f9a8b19a0352f5748bdad80',
+    phoneNumber: '9988787878',
+    createdAt: 2022-08-20T16:29:48.836Z,
+    updatedAt: 2022-08-20T16:29:48.837Z,
+    role: 'USER',
+    dob: null
+  },
+  level: 'info',
+  timestamp: '2022-08-22T10:31:40.156Z'
+}
+{
+  message: 'surya',
+  level: 'error',
+  timestamp: '2022-08-22T10:31:40.162Z'
+}

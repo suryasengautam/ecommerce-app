@@ -24,7 +24,8 @@ const validateUsernamePassword = async(email,password) => {
         where:{email}
     })
     const token = record ? await generateToken(record.name,record.email,record.role) : null;
-    return { resp : record && record.password === md5(password),token}
+    return {resp:record}
+    // return { resp : record && record.password === md5(password),token}
 }
 module.exports = {
     createUser,validateUsernamePassword
